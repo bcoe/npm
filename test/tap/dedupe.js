@@ -27,8 +27,8 @@ function setup (cb) {
   process.chdir(path.join(__dirname, "dedupe"))
   mr(common.port, function (s) { // create mock registry.
     npm.load({registry: common.registry}, function() {
-      // cache can cause issues on Travis.
-      npm.config.set("cache-lock-stale", 1)
+      // cache was causing issues with Travis.
+      npm.config.set("force", true)
 
       rimraf.sync(path.join(__dirname, "dedupe", "node_modules"))
       fs.mkdirSync(path.join(__dirname, "dedupe", "node_modules"))
