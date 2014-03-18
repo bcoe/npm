@@ -1,4 +1,4 @@
-var test = require("tap").test
+/*var test = require("tap").test
   , path = require("path")
   , rimraf = require("rimraf")
   , mkdirp = require("mkdirp")
@@ -47,3 +47,4 @@ test('cleanup', function(t) {
   rimraf.sync(pkg)
   t.end()
 })
+*/
