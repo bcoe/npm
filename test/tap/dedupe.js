@@ -25,9 +25,9 @@ test("dedupe finds the common module and moves it up one level", function (t) {
 
 function setup (cb) {
   process.chdir(path.join(__dirname, "dedupe"))
+  rimraf.sync(path.join(__dirname, "dedupe", "node_modules"))
   mr(common.port, function (s) { // create mock registry.
     npm.load({registry: common.registry}, function() {
-      rimraf.sync(path.join(__dirname, "dedupe", "node_modules"))
       fs.mkdirSync(path.join(__dirname, "dedupe", "node_modules"))
       cb(s)
     })
