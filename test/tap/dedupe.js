@@ -6,7 +6,6 @@ var test = require("tap").test
   , rimraf = require("rimraf")
   , mr = require("npm-registry-mock")
   , common = require('../common-tap.js')
-  , pkg = __dirname + '/dedupe'
 
 test("dedupe finds the common module and moves it up one level", function (t) {
   setup(function (s) {
@@ -26,7 +25,7 @@ test("dedupe finds the common module and moves it up one level", function (t) {
 function setup (cb) {
   process.chdir(path.join(__dirname, "dedupe"))
   mr(common.port, function (s) { // create mock registry.
-    npm.load({cache: pkg + "/cache", registry: common.registry}, function() {
+    npm.load({registry: common.registry}, function() {
       rimraf.sync(path.join(__dirname, "dedupe", "node_modules"))
       fs.mkdirSync(path.join(__dirname, "dedupe", "node_modules"))
       cb(s)
