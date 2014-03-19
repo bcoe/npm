@@ -140,7 +140,7 @@
   "devDependencies": {
     "ronn": "~0.3.6",
     "tap": "~0.4.0",
-    "npm-registry-mock": "~0.6.1"
+    "npm-registry-mock": "git://github.com/bcoe/npm-registry-mock#d9852a0b1e3d95f6deb42b5cb37b276f583580b9"
   },
   "engines": {
     "node": ">=0.8",

@@ -17,6 +17,7 @@ test("dedupe finds the common module and moves it up one level", function (t) {
         t.ok(existsSync(path.join(__dirname, "dedupe", "node_modules", "minimist")))
         t.ok(!existsSync(path.join(__dirname, "dedupe", "node_modules", "checker")))
         s.close() // shutdown mock registry.
+        t.end()
       })
     })
   })
