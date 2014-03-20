@@ -1,4 +1,4 @@
-/*var test = require("tap").test
+var test = require("tap").test
   , path = require("path")
   , rimraf = require("rimraf")
   , mkdirp = require("mkdirp")
@@ -20,6 +20,9 @@ test("setup", function (t) {
 })
 
 test("git-cache-locking: install a git dependency", function (t) {
+
+  // disable git integration tests on Travis.
+  if (process.env.TRAVIS) return t.end()
 
   // package c depends on a.git#master and b.git#master
   // package b depends on a.git#master
@@ -47,4 +50,3 @@ test('cleanup', function(t) {
   rimraf.sync(pkg)
   t.end()
 })
-*/
